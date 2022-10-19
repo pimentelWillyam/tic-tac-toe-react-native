@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// importing core
+import { Text, View } from 'react-native';
+
+// importing styles
+import { styles } from './styles';
+
+// importing hooks
+import {useState} from 'react'
+
+//importing rows and columns
+import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
 export default function App() {
+  const [matrix,setMatrix] = useState([
+    [' 1','2 ','3 '],
+    [' ',' ',' '],
+    [' ',' ',' '],
+  ])
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+        <Text>Tic-Tac-Toe</Text>
+        <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+          <Rows data={matrix}/>
+        </Table>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
