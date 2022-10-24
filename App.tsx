@@ -34,49 +34,49 @@ export default function App() {
     }
   }
 
-  const handlePress = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>, changeCurrentPlayer: (setCurrentPlayer: React.Dispatch<React.SetStateAction<string>>) => void ) =>{
+  const handlePress = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>) =>{
     alterMatrix(row,col,setMatrix)
-    changeCurrentPlayer(setCurrentPlayer)
+    changeCurrentPlayer(currentPlayer,setCurrentPlayer)
   }
 
   const [currentPlayer,setCurrentPlayer] = useState('X')
   
   useEffect(() =>{
-    checkWinner(matrix)
+    //checkWinner(matrix)
   },matrix)
   return (
     <View style={styles.container}>
       <View style={styles.top}>Tic Tac Toe</View>
       <View style={styles.row}>
-        <Text style={styles.cel} onPress={() =>{handlePress(0,0,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(0,0,setMatrix)}}>
           {matrix[0][0]}
         </Text>
-        <Text style={styles.cel} onPress={() =>{handlePress(0,1,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(0,1,setMatrix)}}>
           {matrix[0][1]}
         </Text>
-        <Text style={styles.cel} onPress={() =>{handlePress(0,2,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(0,2,setMatrix,)}}>
           {matrix[0][2]}
         </Text>
       </View>
       <View style={styles.row}>
-        <Text style={styles.cel} onPress={() =>{handlePress(1,0,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(1,0,setMatrix)}}>
           {matrix[1][0]}
         </Text>
-        <Text style={styles.cel} onPress={() =>{handlePress(1,1,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(1,1,setMatrix)}}>
           {matrix[1][1]}
         </Text>
-        <Text style={styles.cel} onPress={() =>{handlePress(1,2,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(1,2,setMatrix)}}>
           {matrix[1][2]}
         </Text>
       </View>
       <View style={styles.row}>
-        <Text style={styles.cel} onPress={() =>{handlePress(2,0,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(2,0,setMatrix)}}>
           {matrix[2][0]}
         </Text>
-        <Text style={styles.cel} onPress={() =>{handlePress(2,1,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(2,1,setMatrix)}}>
           {matrix[2][1]}
         </Text>
-        <Text style={styles.cel} onPress={() =>{handlePress(2,2,setMatrix,changeCurrentPlayer)}}>
+        <Text style={styles.cel} onPress={() =>{handlePress(2,2,setMatrix)}}>
           {matrix[2][2]}
         </Text>
       </View>
