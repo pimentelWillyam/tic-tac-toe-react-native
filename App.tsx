@@ -42,7 +42,7 @@ export default function App() {
   const [currentPlayer,setCurrentPlayer] = useState('X')
   
   useEffect(() =>{
-    //checkWinner(matrix)
+    checkWinner(matrix)
   },matrix)
   return (
     <View style={styles.container}>
