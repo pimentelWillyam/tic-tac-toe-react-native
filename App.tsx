@@ -11,8 +11,6 @@ import {useState,useEffect} from 'react'
 import {checkWinner} from './helpers/checkWinner'
 import { clearMatrix } from './helpers/clearMatrix';
 
-//importing handlers
-
 export default function App() {
   const [matrix,setMatrix] = useState([
     ['_','_','_'],
