@@ -18,14 +18,13 @@ export default function App() {
     ['_','_','_'],
   ])
 
-  const alterMatrix = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>) =>{
-    console.log('matrix being altered')
+  const alterMatrix = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>) =>{ // changes the matrix
     let copyMatrix = matrix
     copyMatrix[row][col] = currentPlayer
     setMatrix(copyMatrix)
   }
 
-  const changeCurrentPlayer = (currentPlayer: string, setCurrentPlayer: React.Dispatch<React.SetStateAction<string>>) =>{
+  const changeCurrentPlayer = (currentPlayer: string, setCurrentPlayer: React.Dispatch<React.SetStateAction<string>>) =>{ // change current player
     if (currentPlayer == 'X'){
       setCurrentPlayer('O')
     }
@@ -34,7 +33,7 @@ export default function App() {
     }
   }
 
-  const handlePress = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>) =>{
+  const handlePress = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>) =>{ // handles every press
     alterMatrix(row,col,setMatrix)
     changeCurrentPlayer(currentPlayer,setCurrentPlayer)
   }
