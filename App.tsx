@@ -9,6 +9,7 @@ import {useState,useEffect} from 'react'
 
 //importing helpers
 import {checkWinner} from './helpers/checkWinner'
+import { clearMatrix } from './helpers/clearMatrix';
 
 //importing handlers
 
@@ -20,6 +21,7 @@ export default function App() {
   ])
 
   const alterMatrix = (row: number, col: number, setMatrix: React.Dispatch<React.SetStateAction<string[][]>>) =>{
+    console.log('matrix being altered')
     let copyMatrix = matrix
     copyMatrix[row][col] = currentPlayer
     setMatrix(copyMatrix)
@@ -42,8 +44,13 @@ export default function App() {
   const [currentPlayer,setCurrentPlayer] = useState('X')
   
   useEffect(() =>{
-    checkWinner(matrix)
-  },matrix)
+    console.log(matrix)
+    if (checkWinner(matrix)){
+      clearMatrix(setMatrix)
+    }
+
+
+  })
   return (
     <View style={styles.container}>
       <View style={styles.top}>Tic Tac Toe</View>
